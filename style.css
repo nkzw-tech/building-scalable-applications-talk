@@ -1,0 +1,178 @@
+@font-face {
+  font-family: 'SalesforceSans';
+  src: url('/fonts/salesforce/woff/SalesforceSans-Book.woff2') format('woff2'),
+    url('/fonts/salesforce/woff/SalesforceSans-Book.woff') format('woff');
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'SalesforceSans';
+  src: url('/fonts/salesforce/woff/SalesforceSans-Semibold.woff2')
+      format('woff2'),
+    url('/fonts/salesforce/woff/SalesforceSans-Semibold.woff') format('woff');
+  font-display: swap;
+  font-style: medium;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  src: url('/fonts/firacode/woff2/FiraCode-Regular.woff2') format('woff2'),
+    url('/fonts/firacode/woff/FiraCode-Regular.woff') format('woff');
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+
+body {
+  font-family: SalesforceSans;
+  font-size: 1.4rem;
+}
+
+a {
+  color: oklch(52.66% 0.26398 270.746);
+  text-decoration: underline;
+  text-decoration-thickness: 2.5px;
+  text-decoration-color: rgba(61, 71, 255, 0.3);
+}
+
+h1,
+h2,
+.title,
+.no-color {
+  align-self: center;
+  font-size: 1.5em;
+  letter-spacing: 0.03em;
+  line-height: 1.1em;
+  margin: 0;
+  text-align: center;
+  text-wrap: balance;
+  width: fit-content;
+}
+
+h1,
+h2 {
+  margin-bottom: 24px;
+}
+
+h1,
+.colorful,
+.title,
+.no-color {
+  -webkit-background-clip: text;
+  -webkit-box-decoration-break: clone;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-image: linear-gradient(
+    to right,
+    oklch(72.012% 0.17468 153.766),
+    oklch(52.66% 0.26398 270.746),
+    oklch(50.513% 0.23127 310.437)
+  );
+  box-decoration-break: clone;
+  filter: drop-shadow(rgb(255, 255, 255, 1) 0 0 3px)
+    drop-shadow(rgb(255, 255, 255, 0.4) 0 0 10px);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.title,
+.no-color {
+  line-height: 1.3em;
+}
+
+a.title {
+  text-decoration-color: rgba(255, 255, 255, 0.3);
+}
+
+.no-color {
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 1)
+  );
+  filter: none;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+pre {
+  align-self: center;
+  margin: 0.25em 0;
+  width: fit-content;
+}
+
+code {
+  font-family: 'Fira Code', monospace;
+}
+
+div.code-container {
+  align-self: center;
+  border-radius: 20px;
+  font-size: 0.75em;
+  padding: 12px 0;
+  width: fit-content;
+}
+
+p code,
+li > code,
+li a > code,
+ul > code {
+  border-radius: 12px;
+  margin: 0 -1px;
+  overflow-wrap: anywhere;
+  padding: 0 3px;
+}
+
+p,
+ul,
+ol {
+  margin: 0.1em;
+}
+
+li:first-child {
+  margin-top: 0;
+}
+
+li:last-child {
+  margin-bottom: 0;
+}
+
+li::marker {
+  color: oklch(72.012% 0.17468 153.766);
+}
+
+img,
+video {
+  align-self: center;
+  border-radius: 32px;
+  display: block;
+  filter: drop-shadow(rgb(0, 0, 0, 0.4) 0 10px 20px);
+  justify-self: center;
+  user-select: none;
+  width: 85%;
+}
+
+video {
+  width: 95%;
+}
+
+img {
+  background-color: #fff;
+  pointer-events: none;
+}
+
+.whiteShadow {
+  filter: drop-shadow(rgb(255, 255, 255, 0.5) 0 10px 20px);
+}
+
+img.nostyle {
+  filter: none;
+}
+
+.regular {
+  text-transform: none;
+}

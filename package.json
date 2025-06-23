@@ -1,0 +1,27 @@
+{
+  "name": "template-talk",
+  "version": "0.0.1",
+  "type": "module",
+  "dependencies": {
+    "@nkzw/remdx": "^0.16.0",
+    "framer-motion": "^12.19.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@nkzw/vite-plugin-remdx": "^0.16.0",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.6.0",
+    "vite": "^7.0.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "shiki": "^0.11.0"
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite dev"
+  }
+}
