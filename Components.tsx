@@ -1,7 +1,7 @@
 import { useInView } from 'framer-motion';
 import { ElementType, ReactNode, useRef } from 'react';
 import { motion } from 'framer-motion';
-import LiquidGlass from './liquid-glass/LiquidGlass.tsx';
+import LiquidGlass from '@nkzw/liquid-glass';
 import Logo from './Logo.tsx';
 
 const Visible = ({ children }: { children: ReactNode }) => {
@@ -26,23 +26,18 @@ const Visible = ({ children }: { children: ReactNode }) => {
 export const Components: Record<string, ElementType> = {
   Visible,
   LiquidGlass: ({ style, ...props }) => (
-    <div style={{ position: 'relative' }}>
-      <LiquidGlass
-        displacementScale={64}
-        blurAmount={0.1}
-        saturation={124}
-        aberrationIntensity={2}
-        elasticity={0.35}
-        cornerRadius={64}
-        style={{
-          position: 'absolute',
-          border: '2px solid rgba(255, 255,255, 0.4)',
-          borderRadius: '66px',
-          ...style,
-        }}
-        {...props}
-      />
-    </div>
+    <LiquidGlass
+      displacementScale={64}
+      blurAmount={0.1}
+      saturation={124}
+      aberrationIntensity={2}
+      elasticity={0.35}
+      borderRadius={64}
+      style={{
+        ...style,
+      }}
+      {...props}
+    />
   ),
   Center: ({ children, style }) => (
     <div
