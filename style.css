@@ -6,13 +6,21 @@
   font-style: normal;
   font-weight: 400;
 }
+
 @font-face {
   font-family: 'SalesforceSans';
   src: url('/fonts/salesforce/woff/SalesforceSans-Semibold.woff2')
       format('woff2'),
     url('/fonts/salesforce/woff/SalesforceSans-Semibold.woff') format('woff');
   font-display: swap;
-  font-style: medium;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'SalesforceSansBold';
+  src: url('/fonts/salesforce/woff/SalesforceSans-Bold.woff2') format('woff2'),
+    url('/fonts/salesforce/woff/SalesforceSans-Bold.woff') format('woff');
+  font-display: swap;
   font-weight: 500;
 }
 
@@ -23,6 +31,20 @@
   font-display: swap;
   font-style: normal;
   font-weight: 400;
+}
+
+:root {
+  --text-color: #111;
+  --background-color: #fff;
+  --text-shadow: drop-shadow(rgb(255, 255, 255, 1) 0 0 4px)
+    drop-shadow(rgb(255, 255, 255, 0.3) 0 0 3px);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: #111;
+    --background-color: #fff;
+  }
 }
 
 body {
@@ -40,7 +62,8 @@ a {
 h1,
 h2,
 .title,
-.no-color {
+.no-color,
+.no-color-link {
   align-self: center;
   font-size: 1.5em;
   letter-spacing: 0.03em;
@@ -48,6 +71,7 @@ h2,
   margin: 0;
   text-align: center;
   text-wrap: balance;
+  user-select: none;
   width: fit-content;
 }
 
@@ -59,27 +83,47 @@ h2 {
 h1,
 .colorful,
 .title,
-.no-color {
+.no-color,
+.no-color-link,
+.alternate {
   -webkit-background-clip: text;
   -webkit-box-decoration-break: clone;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   background-image: linear-gradient(
     to right,
-    oklch(72.012% 0.17468 153.766),
+    oklch(66.438% 0.16131 153.781),
     oklch(52.66% 0.26398 270.746),
     oklch(50.513% 0.23127 310.437)
   );
   box-decoration-break: clone;
-  filter: drop-shadow(rgb(255, 255, 255, 1) 0 0 3px)
-    drop-shadow(rgb(255, 255, 255, 0.4) 0 0 10px);
+  filter: var(--text-shadow);
   font-weight: bold;
   text-transform: uppercase;
 }
 
+.alternate {
+  background-image: linear-gradient(
+    to right,
+    oklch(50.711% 0.19327 351.251),
+    oklch(71.866% 0.29131 329.479),
+    oklch(49.447% 0.22924 307.393)
+  );
+}
+
+.simple {
+  background-image: linear-gradient(
+    to right,
+    oklch(52.66% 0.26398 270.746),
+    oklch(50.513% 0.23127 310.437)
+  );
+}
+
 .title,
-.no-color {
+.no-color,
+.no-color-link {
   line-height: 1.3em;
+  filter: var(--text-shadow) brightness(1.3);
 }
 
 a.title {
@@ -91,6 +135,15 @@ a.title {
     to right,
     rgba(255, 255, 255, 1),
     rgba(255, 255, 255, 1)
+  );
+  filter: none;
+}
+
+.no-color-link {
+  background-image: linear-gradient(
+    to right,
+    oklch(52.66% 0.26398 270.746),
+    oklch(52.66% 0.26398 270.746)
   );
   filter: none;
 }
@@ -115,6 +168,15 @@ div.code-container {
   font-size: 0.75em;
   padding: 12px 0;
   width: fit-content;
+}
+
+li {
+  margin: 0.4em;
+}
+
+ul ul li:first-child,
+ul ul li:last-child {
+  margin: 0.3em 0 0;
 }
 
 p code,
@@ -142,7 +204,15 @@ li:last-child {
 }
 
 li::marker {
-  color: oklch(72.012% 0.17468 153.766);
+  color: oklch(66.438% 0.16131 153.781);
+}
+
+.alternate-text li::marker {
+  color: oklch(71.866% 0.29131 329.479);
+}
+
+.alternate-text a {
+  color: oklch(49.447% 0.22924 307.393);
 }
 
 img,
@@ -160,12 +230,18 @@ video {
   width: 95%;
 }
 
+.video-intro {
+  align-self: start;
+  border-radius: 0;
+  width: 100%;
+}
+
 img {
   background-color: #fff;
   pointer-events: none;
 }
 
-.whiteShadow {
+.video-shadow {
   filter: drop-shadow(rgb(255, 255, 255, 0.5) 0 10px 20px);
 }
 
@@ -175,4 +251,8 @@ img.nostyle {
 
 .regular {
   text-transform: none;
+}
+
+.demo {
+  --text-shadow: drop-shadow(rgb(255, 255, 255, 0.3) 0 0 10px);
 }

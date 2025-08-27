@@ -1,8 +1,8 @@
-import { useInView } from 'framer-motion';
 import { ElementType, ReactNode, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import LiquidGlass from '@nkzw/liquid-glass';
 import Logo from './Logo.tsx';
+import QRCode from './QRCode.tsx';
 
 const Visible = ({ children }: { children: ReactNode }) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -85,6 +85,15 @@ export const Components: Record<string, ElementType> = {
       {...props}
     />
   ),
+  Question: ({ children }) => (
+    <span
+      style={{
+        textTransform: 'none',
+      }}
+    >
+      {children}
+    </span>
+  ),
   Lowercase: ({ children, nowrap }) => (
     <span
       style={{
@@ -108,7 +117,15 @@ export const Components: Record<string, ElementType> = {
     const dotIndex = src.lastIndexOf('.');
     const extension = src.slice(Math.max(0, dotIndex + 1));
     return (
-      <video autoPlay className={className} loop muted playsInline {...props}>
+      <video
+        autoPlay
+        className={className}
+        loop
+        muted
+        preload="auto"
+        playsInline
+        {...props}
+      >
         <source src={src} type={`video/${extension}`} />
         <source
           src={`${src.slice(0, Math.max(0, dotIndex))}.mp4`}
@@ -125,8 +142,17 @@ export const Components: Record<string, ElementType> = {
         style[key] = value;
       }
     }
-    return <img {...props} className={className} src={src} style={style} />;
+    return (
+      <img
+        {...props}
+        loading="eager"
+        className={className}
+        src={src}
+        style={style}
+      />
+    );
   },
+  QRCode,
   a: (props) => {
     return <a target="_blank" {...props} />;
   },

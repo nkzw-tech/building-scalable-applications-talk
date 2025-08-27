@@ -23,7 +23,43 @@ image: /Cover1.jpg
 
 ---
 
+theme: dark
+
+--
+
+<Visible>
+  <Center>
+    <div
+      style={{
+        display: 'grid',
+        gap: 0,
+        gridTemplateColumns: 'repeat(2, 1fr)',
+        gridTemplateRows: 'repeat(2, 1fr)',
+        position: 'absolute',
+        inset: 0,
+      }}
+    >
+      <Video className="video-intro" src="/AC.mp4" />
+      <Video
+        className="video-intro"
+        src="/IntroReactNative.mp4"
+        style={{ height: '101%' }}
+      />
+      <Video
+        className="video-intro"
+        src="/IntroTalk.mp4"
+        style={{ height: '94%' }}
+      />
+      <Video className="video-intro" src="/IntroJest.mp4" />
+    </div>
+  </Center>
+</Visible>
+
+---
+
 image: /CoverEmpty.jpg
+
+transition: leaveOnly
 
 --
 
@@ -35,11 +71,18 @@ image: /CoverEmpty.jpg
         width: 480,
         marginLeft: 25,
         color: '#fff',
+        textWrap: 'balance',
       }}
     >
       <div>
         Nakazawa Tech is an open source company.
-        <a href="mailto:christoph@nakazawa.dev" style={{ color: '#fff' }}>
+        <a
+          href="mailto:christoph@nakazawa.dev"
+          style={{
+            color: '#fff',
+            textDecorationColor: 'rgba(255, 255, 255, 0.3)',
+          }}
+        >
           Work with us.
         </a>
       </div>
@@ -50,7 +93,13 @@ image: /CoverEmpty.jpg
           flexDirection: 'row-reverse',
         }}
       >
-        <a href="https://x.com/cpojer" style={{ color: '#fff' }}>
+        <a
+          href="https://x.com/cpojer"
+          style={{
+            color: '#fff',
+            textDecorationColor: 'rgba(255, 255, 255, 0.3)',
+          }}
+        >
           @cpojer
         </a>
         –
@@ -69,10 +118,10 @@ image: /Cover2.jpg
   <Center>
     <LiquidGlass>
       <div
-        className="title"
+        className="title alternate"
         style={{
-          width: 800,
-          fontSize: '3.5em',
+          width: 900,
+          fontSize: '4em',
         }}
       >
         Building Scalable Applications
@@ -85,12 +134,34 @@ image: /Cover2.jpg
 
 # What does Scalable mean?
 
-- Move fast with stable, battle-tested libraries
-- End-to-End type safety with a great Developer Experience
-- Global order, don't worry about local chaos
-- Minimal context switches, maximal local reasoning
-- Scale from one person to many people
-- Open Source – Own your stack
+- Move fast with reliable, proven libraries
+- End-to-End type safety with great Developer Experience
+- Scale from one person to many
+- Global order, local chaos
+- Few context switches, maximized local reasoning
+- Open Source – control and own your stack
+
+---
+
+image: /Cover14.jpg
+
+--
+
+<Visible>
+  <Center>
+    <LiquidGlass>
+      <div
+        className="title regular"
+        style={{
+          width: 600,
+          fontSize: '3.5em',
+        }}
+      >
+        <Lowercase>and:</Lowercase> Good Taste
+      </div>
+    </LiquidGlass>
+  </Center>
+</Visible>
 
 ---
 
@@ -108,7 +179,7 @@ image: /Cover3.jpg
           fontSize: '3.5em',
         }}
       >
-        Ok, sure but how do I get started?
+        But where do I start?
       </div>
     </LiquidGlass>
   </Center>
@@ -116,9 +187,15 @@ image: /Cover3.jpg
 
 ---
 
-# Let's build a React Native app
+# Let's build a mobile app
 
-- React Native? Expo? New Architecture? Which Navigation stack? Which ScrollView? Are the versions compatible? How to make it fast? How should I style my components? Which packages do I need to install? How do I build it? i18n のやり方は何ですか? How do I set up &lt;anything&gt;? CJS, ESM? …?
+<Center>
+  React Native? Expo? New Architecture? Which Navigation stack? Which List View?
+  Are the versions compatible? How to make it fast? How should I style my
+  components? Which packages do I need to install? How do I build it? i18n
+  のやり方は何ですか? How do I set up &lt;anything&gt;? CJS, ESM? …? _Too many
+  decisions._
+</Center>
 
 ---
 
@@ -156,13 +233,13 @@ image: /Cover4.jpg
 
 ---
 
-# The Basics
+# Foundation
 
 - [TypeScript](https://www.typescriptlang.org)
 - [ESLint](https://eslint.org/) with [Prettier](https://prettier.io/)
 - [pnpm](https://pnpm.io/) as package manager
 - [vitest](https://vitest.dev/) for testing
-- **ESM:** _It's 2025._ This template comes with `"type": "module"`.
+- **ESM:** _It's 2025._ This template comes with `"type": "module"`
 
 ---
 
@@ -176,25 +253,80 @@ image: /Cover4.jpg
 
 <Center>
 
-<div className="title regular">There are faster tools out there!</div>
+# T<Lowercase>here are faster tools out there!</Lowercase>
 
 </Center>
 
 ---
 
+image: /Cover15.jpg
+
+--
+
+<Visible>
+  <Center>
+    <LiquidGlass>
+      <div
+        className="title regular"
+        style={{
+          width: 800,
+          fontSize: '3.5em',
+        }}
+      >
+        Give it five minutes
+      </div>
+    </LiquidGlass>
+  </Center>
+</Visible>
+
+---
+
 # Everything is optimized!
 
-- Prettier uses the `--experimental-cli` and the [Oxc Rust JavaScript parser](https://oxc.rs/).
-- `npm-run-all2` runs lint, tests etc. in parallel.
-- ESLint with great defaults, auto-fixers, and caching.
-  - Based on [`@nkzw/eslint-config`](https://github.com/nkzw-tech/eslint-config).
-- _tl;dr:_ Move fast, never get in the way.
+- Prettier uses the `--experimental-cli` and the [Oxc Rust JavaScript parser](https://oxc.rs/)
+- `npm-run-all2` runs lint, tests etc. in parallel
+- ESLint with great defaults, auto-fixers, and caching
+  - Based on [`@nkzw/eslint-config`](https://github.com/nkzw-tech/eslint-config)
+  - Oxlint will support ESLint plugins in the future
+- _tl;dr: **Move fast, never get in the way**_
 
 ---
 
 <Appear>
-  <Center>![image](/ESLint.png)</Center>
+  <Center>![image](/ESLint1.png)</Center>
 </Appear>
+
+---
+
+transition: none
+
+--
+
+<Center>![image](/ESLint2.png)</Center>
+
+---
+
+transition: none
+
+--
+
+<Center>![image](/ESLint3.png)</Center>
+
+---
+
+transition: none
+
+--
+
+<Center>![image](/ESLint4.png)</Center>
+
+---
+
+transition: leaveOnly
+
+--
+
+<Center>![image](/ESLint5.png)</Center>
 
 ---
 
@@ -204,25 +336,27 @@ image: /Cover4.jpg
 
 ---
 
-# The Basics – Part 2
+# Foundation – Part 2
 
-- Expo 53 & React Native 0.79
+- Expo 53 & React Native 0.79 (Soon Expo 54)
 - [Expo Router](https://docs.expo.dev/router/introduction/)
-- [NativeWind](https://www.nativewind.dev/) & [Tailwind CSS](https://tailwindcss.com/)
-- [fbtee](https://github.com/nkzw-tech/fbtee) for i18n
+- [Nativewind](https://www.nativewind.dev/) & [Tailwind CSS](https://tailwindcss.com/)
+  - [Uniwind](https://uniwind.dev) soon?
+- [`<Stack />`](https://github.com/nkzw-tech/stack)
 - [React Compiler](https://react.dev/learn/react-compiler)
+- [fbtee](https://github.com/nkzw-tech/fbtee) for i18n
 
 ---
 
-# Why NativeWind & Tailwind?
+# <Question>Why Nativewind & Tailwind?</Question>
 
-<div style={{fontSize: '0.65em', alignSelf: 'center'}}>
+<div style={{fontSize: '0.65em', alignSelf: 'center', width: '80%'}}>
 
 ```tsx
 <Pressable>
   {({ pressed }) => (
     <View style={[viewStyle, { opacity: pressed ? 0.5 : 1 }]}>
-      <Text>Click me!</Text>
+      <Text>Tap me!</Text>
     </View>
   )}
 </Pressable>
@@ -230,12 +364,12 @@ image: /Cover4.jpg
 
 </div>
 
-<div style={{fontSize: '0.65em', alignSelf: 'center'}}>
+<div style={{fontSize: '0.65em', alignSelf: 'center', width: '80%'}}>
 
 ```tsx
 <Pressable className="active:opacity-50">
   <View className="flex-row items-center gap-2">
-    <Text>Click me!</Text>
+    <Text>Tap me!</Text>
   </View>
 </Pressable>
 ```
@@ -244,12 +378,75 @@ image: /Cover4.jpg
 
 ---
 
-# Wait, what's <Lowercase>**fbtee**</Lowercase>?
+transition: leaveOnly
 
-- `fbt` is Facebook's internationalization library.
-- It was open sourced, but abandoned.
-- [**`fbtee`**](https://github.com/nkzw-tech/fbtee) is a modern rewrite of `fbt` in TypeScript.
-- It features inline translations & a compiler.
+--
+
+# <Lowercase>@nkzw/stack</Lowercase>
+
+<div style={{fontSize: '0.65em', alignSelf: 'center', width: '80%'}}>
+
+```tsx
+<Pressable>
+  {({ pressed }) => (
+    <View style={[viewStyle, { opacity: pressed ? 0.5 : 1 }]}>
+      <Text>Tap me!</Text>
+    </View>
+  )}
+</Pressable>
+```
+
+</div>
+
+<div style={{fontSize: '0.65em', alignSelf: 'center', width: '80%'}}>
+
+```tsx {1} {3}
+<Pressable className="active:opacity-50">
+  <Stack alignCenter gap>
+    <Text>Tap me!</Text>
+  </Stack>
+</Pressable>
+```
+
+</div>
+
+---
+
+<Appear>
+  <Center>![image](/Stack.png)</Center>
+</Appear>
+
+---
+
+# <Lowercase>@nkzw/stack</Lowercase>
+
+<Center>
+  <div style={{ display: 'flex', flexDirection: 'column', gap: 16}}>
+    <div style={{ textAlign: 'center' }}>Maybe 🤔</div>
+
+    <s style={{textDecorationColor: '#e00'}}>
+
+    ```tsx
+    import { View } from 'react-native';
+    ```
+
+    </s>
+
+    ```tsx
+    import { Stack } from 'react-native';
+    ```
+
+  </div>
+</Center>
+
+---
+
+# <Question>Wait, what's **fbtee**?</Question>
+
+- `fbt` is Facebook's internationalization library
+- It was open sourced, but later abandoned
+- [**`fbtee`**](https://github.com/nkzw-tech/fbtee) is a modern rewrite of `fbt` in TypeScript
+- **fbtee**'s compiler enables inline translations:
 
 ```tsx
 <Text className="text-xl font-bold">
@@ -259,10 +456,76 @@ image: /Cover4.jpg
 
 ---
 
-# The Basics – Part 3
+# <Lowercase>fbtee</Lowercase>
 
-- [Legend List](https://github.com/LegendApp/legend-list)
-- [`react-native-svg`](https://github.com/software-mansion/react-native-svg) and `react-native-svg-transformer`
+<div style={{fontSize: '0.65em', alignSelf: 'center'}}>
+
+```tsx
+const WelcomeMessage = ({ messageCount, user }) => (
+  <fbt desc="Welcome message on Home">
+    Welcome back, <UserWithAvatar user={user} />! You have
+    <fbt:plural
+      count={messageCount}
+      many="messages"
+      name="number of messages"
+      showCount="ifMany"
+    >
+      one message
+    </fbt:plural>.
+  </fbt>
+);
+```
+
+</div>
+
+---
+
+image: /fbtee.png
+
+--
+
+<div style={{ position: 'absolute', right: 170, top: 80 }}>
+  <LiquidGlass saturation={124}>
+    <div
+      className="title regular no-color-link"
+      style={{
+        width: 200,
+      }}
+    >
+      <a href="https://fbtee.dev" target="_blank">
+        fbtee.dev
+      </a>
+    </div>
+  </LiquidGlass>
+</div>
+
+---
+
+image: /Relang.png
+
+--
+
+<div style={{ position: 'absolute', right: 170, top: 80 }}>
+  <LiquidGlass saturation={124}>
+    <div
+      className="title regular no-color-link"
+      style={{
+        width: 200,
+      }}
+    >
+      <a href="https://relang.dev" target="_blank">
+        relang.dev
+      </a>
+    </div>
+  </LiquidGlass>
+</div>
+
+---
+
+# Foundation – Part 3
+
+- [Legend List v2](https://github.com/LegendApp/legend-list)
+- [`react-native-svg`](https://github.com/software-mansion/react-native-svg) and [`react-native-svg-transformer`](https://github.com/kristerkari/react-native-svg-transformer)
 - [`@gorhom/bottom-sheet`](https://github.com/gorhom/react-native-bottom-sheet)
 - [`expo-build-disk-cache`](https://github.com/WookieFPV/expo-build-disk-cache)
 
@@ -292,11 +555,11 @@ image: /Cover5.jpg
       <div
         className="title regular"
         style={{
-          width: 800,
+          width: 700,
           fontSize: '3.5em',
         }}
       >
-        But… I also need to build a backend!
+        But… We also need to build a backend!
       </div>
     </LiquidGlass>
   </Center>
@@ -338,22 +601,22 @@ image: /Cover6.jpg
 # The Server Template
 
 - Same _DevX setup_!
-- Restarts instantly on file changes.
-- Type-Safety from the Database to the Client.
+- Restarts instantly on file changes
+- Type safety from the Database to the Client
 - GraphQL enables loose coupling, ideal for mobile apps!
 
 ---
 
-# What's in the box?
+# <Question>What's in the box?</Question>
 
-- [Prisma](https://www.prisma.io/) as ORM & [Pothos](https://pothos-graphql.dev/) as the GraphQL schema builder.
-- [`prisma-json-types-generator`](https://github.com/arthurfiorette/prisma-json-types-generator) for type-safe JSON types.
+- [Prisma](https://www.prisma.io/) as ORM & [Pothos](https://pothos-graphql.dev/) as the GraphQL schema builder
+- [`prisma-json-types-generator`](https://github.com/arthurfiorette/prisma-json-types-generator) for type safe JSON types
 - [`graphql-yoga`](https://the-guild.dev/graphql/yoga-server)
-- [Hono](https://hono.dev/) as http server & [Better Auth](https://better-auth.com/) for authentication.
+- [Hono](https://hono.dev/) as HTTP server & [Better Auth](https://better-auth.com/) for authentication
 
 ---
 
-# Type-Safety
+# Type Safety: Prisma
 
 <div style={{ textAlign: 'center' }}>
   First, we define our [Prisma
@@ -385,7 +648,7 @@ transition: none
 
 --
 
-# Type-Safety
+# Type Safety: Pothos
 
 Then, we use [Pothos](https://pothos-graphql.dev/) to define the GraphQL schema:
 
@@ -416,7 +679,7 @@ transition: none
 
 --
 
-# Type-Safety
+# Type Safety: Pothos
 
 Then, we use [Pothos](https://pothos-graphql.dev/) to define the GraphQL schema:
 
@@ -433,7 +696,7 @@ builder.prismaNode('User', {
     }),
     locale: t.exposeString('locale', { nullable: false }),
     username: t.exposeString('usrname', { nullable: false }),
-                             // ^ Argument of type '"usrname"' is not assignable […]
+                         // TS: ^ Argument of type '"usrname"' is not assignable […]
   }),
   id: { field: 'id' },
 });
@@ -447,8 +710,13 @@ transition: leaveOnly
 
 --
 
-# Type-Safety
+# Type Safety: GraphQL
 
+<div style={{ textAlign: 'center' }}>
+  Now, our GraphQL schema looks like this:
+</div>
+
+<Center>
 <div style={{fontSize: '0.65em', alignSelf: 'center'}}>
 
 ```graphql
@@ -456,12 +724,13 @@ type User implements Node {
   displayName: String!
   email: String @auth(self: true)
   id: ID!
-  locale: String! @auth(self: true)
+  locale: String!
   username: String!
 }
 ```
 
 </div>
+</Center>
 
 ---
 
@@ -475,7 +744,7 @@ image: /Cover7.jpg
       <div
         className="title regular"
         style={{
-          width: 800,
+          width: 700,
           fontSize: '3.5em',
         }}
       >
@@ -496,7 +765,7 @@ image: /Cover8.jpg
     <LiquidGlass saturation={124}>
       <div
         style={{
-          width: 800,
+          width: 700,
           fontSize: '2.4em',
         }}
       >
@@ -504,8 +773,8 @@ image: /Cover8.jpg
           href="https://github.com/nkzw-tech/expo-app-template/tree/with-relay"
           target="_blank"
         >
-          <div className="no-color regular">nkzw-tech/</div>
-          <div className="no-color regular">expo-app-template</div>
+          <div className="title no-color regular">nkzw-tech/</div>
+          <div className="title no-color regular">expo-app-template</div>
           <div className="title regular">tree/with-relay</div>
         </a>
       </div>
@@ -519,9 +788,9 @@ image: /Cover8.jpg
 
 - GraphQL client for React built by Facebook
 - Declarative queries instead of manual data fetches
+  - _Only one query per full-screen view!_
 - Built-in support for pagination and optimistic updates
 - Composable fragments enable local reasoning
-- Automatic caching and garbage collection
 
 ---
 
@@ -564,28 +833,89 @@ return (
 
 # Local Reasoning
 
-<div style={{fontSize: '0.5em', alignSelf: 'center'}}>
+<div style={{fontSize: '0.42em', alignSelf: 'center'}}>
 
 ```tsx
-const user = useFragment(
-  graphql`
-    fragment UserFragment on User {
-      displayName
-      …
-    }
-  `,
-  userKey
-);
+const UserCard = ({ userKey }) => {
+  const user = useFragment(
+    graphql`
+      fragment UserFragment on User {
+        displayName
+        …
+      }
+    `,
+    userKey
+  );
 
-return (
-  <View className="flex-col gap-2">
-    <Text className="text-lg font-bold">
-      <fbt desc="Greeting">Hello, <fbt:param name="name">{user.displayName}</fbt></fbt>
-    </Text>
-  </View>
-);
+  return (
+    <Stack className="bg-indigo-500" gap>
+      <Text className="text-lg font-bold">
+        <fbt desc="Greeting">
+          Hello, <fbt:param name="name">{user.displayName}</fbt:param>
+        </fbt>
+      </Text>
+    </Stack>
+  );
+};
 ```
 
+</div>
+
+---
+
+transition: leaveOnly
+
+--
+
+# Local Reasoning & Type Safe
+
+<div style={{ display: 'flex', flexDirection: 'row', gap: 16}}>
+<div style={{fontSize: '0.4em', alignSelf: 'start'}}>
+
+```tsx
+// Client
+const UserCard = ({ userKey }) => {
+  const user = useFragment(
+    graphql`
+      fragment UserFragment on User {
+        displayName
+        …
+      }
+    `,
+    userKey
+  );
+  return (
+    <VStack className="bg-indigo-500" gap>
+      <Text className="text-lg font-bold">
+        <fbt desc="Greeting">
+          Hello, <fbt:param name="name">{user.displayName}</fbt:param>
+        </fbt>
+      </Text>
+    </VStack>
+  );
+};
+```
+
+</div>
+<div style={{fontSize: '0.4em', alignSelf: 'start'}}>
+
+```tsx
+// Server
+builder.prismaNode('User', {
+  fields: (t) => ({
+    displayName: t.exposeString('displayName'),
+    email: t.string({
+      authScopes: (user) => ({ self: user.id })
+      resolve: ({ email }) => email,
+    }),
+    locale: t.exposeString('locale'),
+    username: t.exposeString('username'),
+  }),
+  id: { field: 'id' },
+});
+```
+
+</div>
 </div>
 
 ---
@@ -606,11 +936,11 @@ image: /Cover11.jpg
       <div
         className="title regular"
         style={{
-          width: 800,
+          width: 720,
           fontSize: '3.5em',
         }}
       >
-        Now my client is asking me for a web app!
+        But… what if we also need a web app?
       </div>
     </LiquidGlass>
   </Center>
@@ -626,7 +956,7 @@ image: /Cover9.jpg
   <Center>
     <LiquidGlass saturation={124}>
       <div
-        className="title"
+        className="title regular"
         style={{
           width: 800,
           fontSize: '3.5em',
@@ -657,7 +987,7 @@ image: /Cover10.jpg
   <Center>
     <LiquidGlass saturation={124}>
       <div
-        className="title"
+        className="title regular"
         style={{
           width: 800,
           fontSize: '3.5em',
@@ -676,9 +1006,10 @@ image: /Cover10.jpg
 
 # Library Template
 
-- Build new JavaScript libraries quickly with TypeScript, ESM, and [`tsdown`](https://tsdown.dev/).
-- Uses [Rolldown](https://rolldown.rs/) for bundling.
-- Same _DevX setup_ as the other templates.
+- Build new JavaScript libraries quickly with TypeScript, ESM, and [`tsdown`](https://tsdown.dev/)
+- Again, same _DevX setup_!
+- Uses [Rolldown](https://rolldown.rs/) for bundling
+- Ship new packages to npm quickly
 
 ---
 
@@ -687,7 +1018,7 @@ theme: dark
 --
 
 <Visible>
-  <Video src="/AC.mp4" className="whiteShadow" />
+  <Video src="/AC.mp4" className="video-shadow" />
 </Visible>
 
 ---
@@ -698,15 +1029,20 @@ theme: dark
 
 <Center>
 
-<div className="title" style={{ width: 300 }}>
-  _Demo_
-</div>
+<div className="title regular demo">_Demo_</div>
 
 </Center>
 
 ---
 
+image: /Cover13.jpg
+
+--
+
+---
+
 image: /Cover12.png
+transition: opacity
 
 --
 
@@ -727,7 +1063,10 @@ image: /Cover12.png
     >
       <div style={{ position: 'relative' }}>
         <LiquidGlass>
-          <div className="title regular" style={{ fontSize: '2em' }}>
+          <div
+            className="title regular simple"
+            style={{ fontSize: '2em', width: 400 }}
+          >
             <a href="https://github.com/nkzw-tech/expo-app-template">
               <div>nkzw-tech/</div>
               <div>expo-app-template</div>
@@ -736,7 +1075,10 @@ image: /Cover12.png
         </LiquidGlass>
       </div>
       <LiquidGlass>
-        <div className="title regular" style={{ fontSize: '2em' }}>
+        <div
+          className="title regular simple"
+          style={{ fontSize: '2em', width: 400 }}
+        >
           <a href="https://github.com/nkzw-tech/web-app-template">
             <div>nkzw-tech/</div>
             <div>web-app-template</div>
@@ -744,7 +1086,10 @@ image: /Cover12.png
         </div>
       </LiquidGlass>
       <LiquidGlass>
-        <div className="title regular" style={{ fontSize: '2em' }}>
+        <div
+          className="title regular simple"
+          style={{ fontSize: '2em', width: 400 }}
+        >
           <a href="https://github.com/nkzw-tech/server-template">
             <div>nkzw-tech/</div>
             <div>server-template</div>
@@ -752,7 +1097,10 @@ image: /Cover12.png
         </div>
       </LiquidGlass>
       <LiquidGlass>
-        <div className="title regular" style={{ fontSize: '2em' }}>
+        <div
+          className="title regular simple"
+          style={{ fontSize: '2em', width: 400 }}
+        >
           <a href="https://github.com/nkzw-tech/library-template">
             <div>nkzw-tech/</div>
             <div>library-template</div>
@@ -765,7 +1113,7 @@ image: /Cover12.png
 
 ---
 
-transition: leaveOnly
+transition: opacity
 image: /Cover12.png
 
 --
@@ -778,16 +1126,19 @@ image: /Cover12.png
         gap: 0,
         gridTemplateColumns: 'repeat(2, 1fr)',
         gridTemplateRows: 'repeat(2, 1fr)',
-        height: '110%',
+        height: '122%',
         left: '25%',
         position: 'absolute',
-        top: '20%',
+        top: '18%',
         width: '100%',
       }}
     >
       <div style={{ position: 'relative' }}>
         <LiquidGlass>
-          <div className="title regular" style={{ fontSize: '2em' }}>
+          <div
+            className="title regular simple"
+            style={{ fontSize: '2em', width: 400 }}
+          >
             <a href="https://github.com/nkzw-tech/expo-app-template">
               <div>nkzw-tech/</div>
               <div>expo-app-template</div>
@@ -796,7 +1147,10 @@ image: /Cover12.png
         </LiquidGlass>
       </div>
       <LiquidGlass>
-        <div className="title regular" style={{ fontSize: '2em' }}>
+        <div
+          className="title regular simple"
+          style={{ fontSize: '2em', width: 400 }}
+        >
           <a href="https://github.com/nkzw-tech/web-app-template">
             <div>nkzw-tech/</div>
             <div>web-app-template</div>
@@ -804,7 +1158,10 @@ image: /Cover12.png
         </div>
       </LiquidGlass>
       <LiquidGlass>
-        <div className="title regular" style={{ fontSize: '2em' }}>
+        <div
+          className="title regular simple"
+          style={{ fontSize: '2em', width: 400 }}
+        >
           <a href="https://github.com/nkzw-tech/server-template">
             <div>nkzw-tech/</div>
             <div>server-template</div>
@@ -812,7 +1169,10 @@ image: /Cover12.png
         </div>
       </LiquidGlass>
       <LiquidGlass>
-        <div className="title regular" style={{ fontSize: '2em' }}>
+        <div
+          className="title regular simple"
+          style={{ fontSize: '2em', width: 400 }}
+        >
           <a href="https://github.com/nkzw-tech/library-template">
             <div>nkzw-tech/</div>
             <div>library-template</div>
@@ -821,23 +1181,45 @@ image: /Cover12.png
       </LiquidGlass>
     </div>
   </Center>
-  <Center style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
-
-    # What do you want to build today?
-
+  <Center
+    style={{
+      position: 'absolute',
+      inset: 0,
+      pointerEvents: 'none',
+      fontFamily: 'SalesforceSansBold',
+    }}
+  >
+    <div
+      style={{
+        backdropFilter: 'blur(4px)',
+        borderRadius: 60,
+        width: 920,
+      }}
+    >
+      <h1 className="simple" style={{ margin: 0 }}>
+        What do you want to create today?
+      </h1>
+    </div>
   </Center>
 </Visible>
 
 ---
 
-# R<Lowercase>e</Lowercase>MDX
+<h1 className="alternate">
+  R<Lowercase>e</Lowercase>MDX
+</h1>
 
-- This talk was built using <span className="colorful">**R<Lowercase>e</Lowercase>MDX**</span>!
+<div className="alternate-text">
+
+- This talk was created using <span className="alternate">**R<Lowercase>e</Lowercase>MDX**</span>!
 - **Slides:** [scalable-apps.nakazawa.dev](https://scalable-apps.nakazawa.dev)
 - **Source:**
   [`nkzw-tech/`
   `building-scalable-applications-talk`](https://github.com/nkzw-tech/building-scalable-applications-talk)
 - **Beautiful React & MDX Presentations:** [`nkzw-tech/remdx`](https://github.com/nkzw-tech/remdx)
+- [`@nkzw/liquid-glass`](https://github.com/nkzw-tech/liquid-glass) 🤪
+
+</div>
 
 ---
 
@@ -848,13 +1230,7 @@ image: /Cover1.jpg
 <Visible>
   <Center>
     <LiquidGlass saturation={192}>
-      <div
-        children={<Logo />}
-        style={{
-          width: '600px',
-          height: '200px',
-        }}
-      />
+      <QRCode width={500} height={500} />
     </LiquidGlass>
   </Center>
 </Visible>
